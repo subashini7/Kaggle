@@ -1,0 +1,29 @@
+Supervised classification/regression ML model training
+1. Clean up missing values in the datasets
+2. Plot the distribution of all the variables to understand bias in the datasets, as well as relationship w.r.t output
+3. Evaluate Feature Engineering - addition/deletion of columns. 
+4. Plot correlation, mutual information of the variables 
+5. Evaluation metric adaptation for the given problem
+6. ML model with SHAP or feature importance to determine which of the columns provide value to the training
+7. Evaluate the trained model - Learning curves to determine over-fitting or under-fitting, Training and Test Set distributions to ensure that the performance will be similar in the leaderboard
+
+
+from autogluon.tabular import TabularPredictor
+import matplotlib.pyplot as plt
+
+predictor = TabularPredictor.load("/kaggle/working/my_autogluon_model")
+predictor.fit(..., learning_curves=True)
+
+# Retrieve learning curves
+curves = predictor.learning_curves()
+model_curves = curves['best']
+plt.plot(model_curves['train']['score'], label='Training')
+plt.plot(model_curves['valid']['score'], label='Validation')
+# epochs = range(1, len(val_score) + 1)
+# plt.plot(epochs, val_score, marker='o')
+plt.xlabel('Epoch')
+plt.ylabel('Score')
+plt.title('Learning Curve (Best Model)')
+plt.show()
+
+# Check if the test data is similar to the training dataset

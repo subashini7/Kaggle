@@ -1,0 +1,3 @@
+AutoML model trained using RMSE with log1p of calories - best - 0.0056
+AutoML model trained using RMSLE - better - 0.006
+ML model trained with Random Forest - 0.012
