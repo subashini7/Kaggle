@@ -1,3 +1,5 @@
-AutoML model trained using RMSE with log1p of calories - best - 0.0056
-AutoML model trained using RMSLE - better - 0.006
-ML model trained with Random Forest - 0.012
+AutoML model trained using RMSE with log1p of calories - Public Score 0.0056
+AutoML model trained using RMSLE - Public Score - 0.006
+ML model trained with Random Forest - Public Score - 0.012
+
+How do we determine if AutoML models are over-fit?
